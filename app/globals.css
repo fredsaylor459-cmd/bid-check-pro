@@ -181,3 +181,12 @@ html, body {
 
 /* ─── LINKS ─── */
 a { color: inherit; }
+
+/* ─── NAV ─── */
+.nav-phone {
+  color: #555;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-phone:hover { color: #aaa; }

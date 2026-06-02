@@ -46,12 +46,7 @@ export default function Nav() {
 
       {/* Right side */}
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        <a
-          href="tel:8302658430"
-          style={{ color: "#555", fontSize: 13, textDecoration: "none", transition: "color 0.2s" }}
-          onMouseEnter={e => (e.target.style.color = "#aaa")}
-          onMouseLeave={e => (e.target.style.color = "#555")}
-        >
+        <a href="tel:8302658430" className="nav-phone">
           📞 830-265-8430
         </a>
         <Link href="/upload" style={{ textDecoration: "none" }}>
