@@ -1,0 +1,183 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #06060a;
+  color: #e8e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── CHROME SHIMMER TEXT ─── */
+.chrome {
+  background: linear-gradient(
+    90deg,
+    #777 0%,
+    #bbb 15%,
+    #eee 30%,
+    #fff 45%,
+    #ccc 60%,
+    #999 75%,
+    #ddd 90%,
+    #aaa 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: chromeShimmer 5s linear infinite;
+}
+
+@keyframes chromeShimmer {
+  to { background-position: 200% center; }
+}
+
+/* ─── GLASS CARD ─── */
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(200, 200, 220, 0.11);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ─── CHROME BUTTON ─── */
+.btn-chrome {
+  background: linear-gradient(
+    180deg,
+    #d8d8d8 0%,
+    #a8a8a8 30%,
+    #727272 55%,
+    #b8b8b8 80%,
+    #d4d4d4 100%
+  );
+  color: #111;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  box-shadow:
+    0 0 20px rgba(180, 180, 200, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  font-family: inherit;
+}
+
+.btn-chrome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-chrome:hover::before {
+  left: 150%;
+}
+
+.btn-chrome:hover {
+  box-shadow:
+    0 0 36px rgba(200, 200, 220, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-chrome:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── GHOST BUTTON ─── */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(200, 200, 220, 0.2);
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(200, 200, 220, 0.45);
+  color: #e8e8f0;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ─── FORM FIELDS ─── */
+.field {
+  display: block;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(200, 200, 220, 0.11);
+  color: #e8e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field::placeholder {
+  color: #33334a;
+}
+
+.field:focus {
+  border-color: rgba(200, 200, 220, 0.32);
+  box-shadow: 0 0 0 3px rgba(180, 180, 200, 0.08);
+}
+
+/* ─── BACKGROUND GRID ─── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(200, 200, 220, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 200, 220, 0.028) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fadeUp 0.55s ease both; }
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #06060a; }
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 200, 220, 0.13);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 200, 220, 0.25);
+}
+
+/* ─── LINKS ─── */
+a { color: inherit; }
