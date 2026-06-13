@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FairBid — Know If Your Contractor Quote Is Fair</title>
+<meta name="description" content="Get a fair shake on every contractor quote. AI reviews any construction bid in 60 seconds. From $79. Call 1-936-265-0859.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF8F4;
+  --cream2: #F2EEE6;
+  --navy: #1B2B4B;
+  --navy2: #243658;
+  --terra: #C85A2A;
+  --terra2: #E06B38;
+  --sage: #3D7A5F;
+  --sage2: #4A9272;
+  --gold: #C4872A;
+  --gold2: #DFA040;
+  --ink: #2C2C2C;
+  --muted: #6B7280;
+  --border: #DDD8CF;
+  --border2: #C9C3B8;
+  --white: #FFFFFF;
+  --danger: #B91C1C;
+  --warn: #92400E;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* ─── NAV ─── */
+nav{background:var(--white);border-bottom:2px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:36px;height:36px;background:var(--terra);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;font-weight:800;font-family:'Lora',serif}
+.logo-name{font-family:'Lora',serif;font-size:22px;font-weight:700;color:var(--navy)}
+.logo-name span{color:var(--terra)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border2);border-radius:8px;transition:.2s}
+.nav-phone:hover{border-color:var(--terra);color:var(--terra)}
+.nav-cta{background:var(--terra);color:white;border:none;border-radius:8px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif}
+.nav-cta:hover{background:var(--terra2)}
+
+/* ─── HERO ─── */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:white;padding:80px 32px 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-inner{max-width:760px;margin:0 auto;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.85);margin-bottom:24px}
+.hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Lora',serif;font-size:clamp(36px,6vw,60px);font-weight:700;line-height:1.15;margin-bottom:20px;color:white}
+h1 em{color:#FCD34D;font-style:normal}
+.hero-sub{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;margin:0 auto 36px;line-height:1.65}
+.hero-sub strong{color:white}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.btn-primary{background:var(--terra);color:white;border:none;border-radius:10px;padding:16px 32px;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(200,90,42,.4)}
+.btn-primary:hover{background:var(--terra2);transform:translateY(-2px)}
+.btn-secondary{background:transparent;color:white;border:2px solid rgba(255,255,255,.4);border-radius:10px;padding:14px 28px;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif}
+.btn-secondary:hover{border-color:white;background:rgba(255,255,255,.08)}
+.hero-phone{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hero-phone a{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);font-size:14px;font-weight:500;text-decoration:none;transition:.2s}
+.hero-phone a:hover{color:white}
+
+/* ─── TRUST BAR ─── */
+.trust-bar{background:var(--white);border-bottom:1px solid var(--border);padding:16px 32px}
+.trust-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:500}
+.trust-item svg{flex-shrink:0}
+.trust-div{width:1px;height:18px;background:var(--border)}
+
+/* ─── SECTION WRAPPER ─── */
+.section{padding:72px 32px}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-cream{background:var(--cream)}
+.section-white{background:var(--white)}
+.section-cream2{background:var(--cream2)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra);margin-bottom:10px;text-align:center}
+h2{font-family:'Lora',serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--navy);text-align:center;margin-bottom:12px;line-height:1.2}
+.sec-lead{font-size:16px;color:var(--muted);text-align:center;max-width:520px;margin:0 auto 48px;line-height:1.65}
+
+/* ─── HOW IT WORKS ─── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.step{text-align:center;padding:32px 24px;background:var(--white);border:1px solid var(--border);border-radius:16px;position:relative}
+.step-num{width:48px;height:48px;background:var(--terra);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:20px;font-weight:700;margin:0 auto 18px}
+.step h3{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.step p{font-size:14px;color:var(--muted);line-height:1.6}
+.step-connector{position:absolute;right:-18px;top:50%;transform:translateY(-50%);color:var(--border2);font-size:24px;z-index:1}
+
+/* ─── TOOLTIP ─── */
+.tip{position:relative;display:inline}
+.tip-word{border-bottom:2px dotted var(--terra);cursor:help;color:inherit}
+.tip-box{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--navy);color:white;font-size:12px;line-height:1.5;padding:10px 14px;border-radius:8px;width:220px;pointer-events:none;opacity:0;transition:opacity .2s;z-index:100;font-weight:400;text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.tip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--navy)}
+.tip:hover .tip-box,.tip:focus-within .tip-box{opacity:1}
+
+/* ─── PRICING ─── */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{background:var(--white);border:2px solid var(--border);border-radius:18px;padding:32px 28px;position:relative;transition:.2s}
+.pc:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px)}
+.pc.featured{border-color:var(--terra);box-shadow:0 0 0 4px rgba(200,90,42,.1)}
+.pc.premium{border-color:var(--gold)}
+.pc-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--terra);color:white;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap;letter-spacing:.5px}
+.pc-badge.gold{background:var(--gold)}
+.pc-icon{font-size:32px;margin-bottom:14px}
+.pc-name{font-family:'Lora',serif;font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.5px;margin-bottom:6px}
+.pc-price{font-family:'Lora',serif;font-size:52px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px}
+.pc-price sup{font-size:22px;vertical-align:top;margin-top:10px;display:inline-block}
+.pc-cycle{font-size:13px;color:var(--muted);margin-bottom:16px}
+.pc-desc{font-size:14px;color:var(--ink);line-height:1.6;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.pc-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.pc-feats li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink);line-height:1.5}
+.pc-feats li .check{color:var(--sage);font-size:16px;flex-shrink:0;margin-top:0}
+.pc-btn{width:100%;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:.2s}
+.pc-btn-primary{background:var(--terra);color:white}
+.pc-btn-primary:hover{background:var(--terra2)}
+.pc-btn-navy{background:var(--navy);color:white}
+.pc-btn-navy:hover{background:var(--navy2)}
+.pc-btn-gold{background:var(--gold);color:white}
+.pc-btn-gold:hover{background:var(--gold2)}
+
+/* ─── FORM ─── */
+.form-wrap{max-width:700px;margin:0 auto}
+.progress-bar{display:flex;align-items:center;justify-content:center;margin-bottom:40px;gap:0}
+.prog-step{display:flex;flex-direction:column;align-items:center;gap:6px}
+.prog-circle{width:36px;height:36px;border-radius:50%;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--muted);background:var(--white);transition:.3s}
+.prog-circle.active{border-color:var(--terra);color:var(--terra);background:rgba(200,90,42,.06)}
+.prog-circle.done{border-color:var(--sage);background:var(--sage);color:white}
+.prog-label{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.prog-label.active{color:var(--terra)}
+.prog-line{width:60px;height:2px;background:var(--border);margin-bottom:20px;transition:.3s}
+.prog-line.done{background:var(--sage)}
+
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:16px}
+.card-title{font-family:'Lora',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.card-icon{font-size:20px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fgrp{display:flex;flex-direction:column;gap:6px}
+.fgrp.full{grid-column:1/-1}
+label{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+input,select,textarea{background:var(--cream);border:1.5px solid var(--border);border-radius:8px;padding:11px 14px;font-size:15px;font-family:'Inter',sans-serif;color:var(--ink);width:100%;transition:.2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--terra);background:var(--white);box-shadow:0 0 0 3px rgba(200,90,42,.08)}
+textarea{min-height:130px;resize:vertical;line-height:1.6}
+select option{background:white}
+
+.trade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.trade-btn{border:1.5px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;cursor:pointer;background:var(--cream);font-size:12px;font-weight:600;color:var(--muted);transition:.2s;line-height:1.4}
+.trade-btn:hover{border-color:var(--terra);color:var(--terra);background:rgba(200,90,42,.04)}
+.trade-btn.sel{border-color:var(--terra);background:rgba(200,90,42,.08);color:var(--terra)}
+.trade-icon{font-size:22px;display:block;margin-bottom:4px}
+
+.ai-hint{background:rgba(61,122,95,.07);border:1px solid rgba(61,122,95,.2);border-radius:10px;padding:13px 16px;margin-bottom:16px;font-size:13px;line-height:1.6;display:none}
+.ai-hint.show{display:block}
+.ai-hint strong{color:var(--sage)}
+
+.plan-select{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.plan-opt{border:2px solid var(--border);border-radius:12px;padding:16px 12px;cursor:pointer;background:var(--cream);text-align:center;transition:.2s;position:relative}
+.plan-opt:hover{border-color:var(--terra)}
+.plan-opt.sel{border-color:var(--terra);background:rgba(200,90,42,.06)}
+.plan-opt.sel-gold{border-color:var(--gold);background:rgba(196,135,42,.06)}
+.plan-opt .badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;white-space:nowrap}
+.badge-pop{background:var(--terra);color:white}
+.badge-big{background:var(--gold);color:white}
+.plan-price{font-family:'Lora',serif;font-size:26px;font-weight:700;color:var(--navy)}
+.plan-name{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin:2px 0}
+.plan-tag{font-size:11px;color:var(--muted)}
+
+.pay-btn{width:100%;padding:16px;background:var(--terra);color:white;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:.2s;font-family:'Inter',sans-serif;box-shadow:0 4px 20px rgba(200,90,42,.3)}
+.pay-btn:hover{background:var(--terra2);transform:translateY(-2px)}
+.pay-note{text-align:center;font-size:12px;color:var(--muted);margin-top:10px}
+
+.upload-zone{border:2px dashed var(--border2);border-radius:12px;padding:24px;text-align:center;cursor:pointer;position:relative;background:var(--cream);transition:.2s}
+.upload-zone:hover,.upload-zone.over{border-color:var(--terra);background:rgba(200,90,42,.03)}
+.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;border:none;padding:0}
+.file-picked{display:none;align-items:center;gap:8px;margin-top:10px;padding:8px 12px;background:rgba(61,122,95,.08);border:1px solid rgba(61,122,95,.2);border-radius:8px;font-size:12px;color:var(--sage);font-weight:600}
+.file-picked.show{display:flex}
+
+/* ─── ANALYZING ─── */
+.analyzing{display:none;text-align:center;padding:60px 32px;background:var(--white);border:1px solid var(--border);border-radius:16px}
+.analyzing.show{display:block}
+.spinner{width:56px;height:56px;border:3px solid var(--border);border-top-color:var(--terra);border-radius:50%;margin:0 auto 24px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.an-title{font-family:'Lora',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.an-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.an-steps{max-width:320px;margin:0 auto;text-align:left}
+.an-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:14px;color:var(--muted);border-bottom:1px solid var(--border)}
+.an-step:last-child{border-bottom:none}
+.an-step.active{color:var(--ink);font-weight:500}
+.an-step.done{color:var(--sage)}
+.an-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0}
+.an-step.active .an-dot{background:var(--terra);animation:pulse 1s infinite}
+.an-step.done .an-dot{background:var(--sage)}
+
+/* ─── RESULTS ─── */
+.results{display:none}
+.results.show{display:block}
+
+.verdict-card{border-radius:16px;padding:28px;margin-bottom:16px;border:2px solid}
+.verdict-fair{background:rgba(61,122,95,.05);border-color:rgba(61,122,95,.3)}
+.verdict-warn{background:rgba(146,64,14,.04);border-color:rgba(146,64,14,.3)}
+.verdict-danger{background:rgba(185,28,28,.04);border-color:rgba(185,28,28,.3)}
+.v-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1px;padding:5px 12px;border-radius:20px;margin-bottom:16px}
+.v-badge-fair{background:rgba(61,122,95,.12);color:var(--sage)}
+.v-badge-warn{background:rgba(146,64,14,.1);color:var(--warn)}
+.v-badge-danger{background:rgba(185,28,28,.1);color:var(--danger)}
+.score-row{display:flex;align-items:center;gap:24px;margin-bottom:16px}
+.score-num{font-family:'Lora',serif;font-size:64px;font-weight:700;line-height:1}
+.score-fair{color:var(--sage)}
+.score-warn{color:var(--warn)}
+.score-danger{color:var(--danger)}
+.score-bar-wrap{flex:1}
+.score-bar-label{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.5px;margin-bottom:8px}
+.score-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.score-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.fill-fair{background:linear-gradient(90deg,var(--sage),var(--sage2))}
+.fill-warn{background:linear-gradient(90deg,var(--warn),var(--gold))}
+.fill-danger{background:linear-gradient(90deg,var(--danger),#EF4444)}
+.v-headline{font-family:'Lora',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.v-summary{font-size:15px;color:var(--ink);line-height:1.7}
+.fair-range{margin-top:14px;padding:12px 16px;background:rgba(27,43,75,.04);border:1px solid var(--border);border-radius:10px;font-size:14px;color:var(--muted)}
+.fair-range strong{color:var(--navy)}
+
+.findings-grid{display:flex;flex-direction:column;gap:10px}
+.finding{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;gap:14px;align-items:flex-start}
+.finding-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.fi-red{background:rgba(185,28,28,.08)}
+.fi-warn{background:rgba(146,64,14,.08)}
+.fi-good{background:rgba(61,122,95,.08)}
+.fi-info{background:rgba(27,43,75,.06)}
+.finding-body{}
+.finding-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:4px}
+.finding-desc{font-size:13px;color:var(--ink);line-height:1.55}
+.finding-tag{display:inline-block;margin-top:6px;font-size:10px;font-weight:600;letter-spacing:.5px;padding:2px 8px;border-radius:5px;background:var(--cream2);color:var(--muted)}
+
+.questions-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px}
+.q-title{font-family:'Lora',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.q-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.q-item{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--cream);border-radius:10px;border:1px solid var(--border);font-size:14px;line-height:1.55}
+.q-num{font-size:11px;font-weight:700;color:var(--terra);flex-shrink:0;padding-top:2px}
+
+.neg-box{margin-top:14px;padding:16px;background:rgba(61,122,95,.06);border:1px solid rgba(61,122,95,.2);border-radius:10px;font-size:14px;line-height:1.65}
+.neg-box strong{color:var(--sage)}
+.rec-box{margin-top:12px;padding:14px 16px;background:rgba(200,90,42,.06);border:1px solid rgba(200,90,42,.2);border-radius:10px;font-size:14px;line-height:1.65}
+.rec-box strong{color:var(--terra)}
+.extra-box{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:14px;line-height:1.65}
+.counter-box{background:rgba(196,135,42,.06);border:1px solid rgba(196,135,42,.2)}
+.counter-box strong{color:var(--gold)}
+.milestone-box{background:rgba(27,43,75,.05);border:1px solid rgba(27,43,75,.15)}
+.milestone-box strong{color:var(--navy)}
+
+.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.ra-btn{padding:13px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;transition:.2s;border:none}
+.ra-primary{background:var(--navy);color:white}
+.ra-primary:hover{background:var(--navy2)}
+.ra-ghost{background:var(--cream2);color:var(--ink);border:1.5px solid var(--border)}
+.ra-ghost:hover{border-color:var(--terra);color:var(--terra)}
+
+.share-row{text-align:center;margin-top:24px}
+.share-label{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:1px;margin-bottom:12px}
+.share-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.sh-btn{padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:.2s}
+.sh-fb{background:#1877F2;color:white}
+.sh-tw{background:#000;color:white}
+.sh-wa{background:#25D366;color:white}
+.sh-nd{background:#E5511B;color:white}
+.sh-cp{background:var(--cream2);color:var(--ink);border:1px solid var(--border)}
+
+/* ─── TESTIMONIALS ─── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px}
+.stars{color:#FBBF24;font-size:16px;letter-spacing:2px;margin-bottom:12px}
+.testi p{font-size:15px;color:var(--ink);line-height:1.65;margin-bottom:16px}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;font-size:16px}
+.testi-name{font-weight:700;font-size:14px;color:var(--navy)}
+.testi-detail{font-size:12px;color:var(--muted)}
+
+/* ─── SAMPLE REPORT ─── */
+.sample-section{background:var(--cream2);padding:72px 32px}
+.sample-wrap{max-width:680px;margin:0 auto}
+.sample-preview{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px;box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.sample-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.sample-title{font-family:'Lora',serif;font-size:18px;font-weight:700;color:var(--navy)}
+.sample-badge{background:rgba(61,122,95,.1);color:var(--sage);font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.5px}
+.sample-score-row{display:flex;align-items:center;gap:18px;margin-bottom:20px}
+.sample-score{font-family:'Lora',serif;font-size:56px;font-weight:700;color:var(--warn)}
+.sample-bar-wrap{flex:1}
+.sample-verdict{font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--warn);margin-bottom:8px}
+.sample-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.sample-fill{height:100%;width:64%;background:linear-gradient(90deg,var(--warn),var(--gold));border-radius:4px}
+.sample-headline{font-family:'Lora',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.sample-para{font-size:14px;color:var(--ink);line-height:1.65;margin-bottom:20px}
+.sample-find{display:flex;gap:12px;align-items:flex-start;padding:12px;background:var(--cream);border-radius:10px;border:1px solid var(--border);margin-bottom:8px}
+.sample-find-icon{font-size:16px;width:30px;height:30px;background:rgba(146,64,14,.08);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sample-find-body .ftitle{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:3px}
+.sample-find-body .fdesc{font-size:12px;color:var(--muted);line-height:1.5}
+.sample-q{padding:10px 12px;background:var(--cream);border-radius:8px;border:1px solid var(--border);font-size:13px;margin-bottom:6px;display:flex;gap:10px}
+.sample-q-num{font-size:11px;font-weight:700;color:var(--terra);flex-shrink:0}
+
+/* ─── PHONE CTA ─── */
+.phone-banner{background:var(--navy);color:white;padding:20px 32px}
+.phone-banner-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.phone-banner p{font-size:15px;font-weight:500;color:rgba(255,255,255,.8)}
+.phone-banner strong{color:white}
+.phone-link{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s}
+.ph-call{background:var(--terra);color:white}
+.ph-call:hover{background:var(--terra2)}
+.ph-text{background:rgba(255,255,255,.1);color:white;border:1.5px solid rgba(255,255,255,.3)}
+.ph-text:hover{background:rgba(255,255,255,.2)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:48px 32px 32px;text-align:center}
+.foot-logo{font-family:'Lora',serif;font-size:28px;font-weight:700;color:white;margin-bottom:6px}
+.foot-logo span{color:var(--terra2)}
+.foot-tagline{font-size:14px;margin-bottom:20px}
+.foot-links{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.foot-link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:.2s}
+.fl-call{background:var(--terra);color:white}
+.fl-call:hover{background:var(--terra2)}
+.fl-text{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.15)}
+.fl-text:hover{background:rgba(255,255,255,.15);color:white}
+.foot-fine{font-size:11px;color:rgba(255,255,255,.35);margin-top:20px;line-height:1.8}
+
+/* ─── TOAST ─── */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .steps,.price-grid,.testi-grid{grid-template-columns:1fr;gap:16px}
+  .pc.featured{transform:none}
+  .pc{padding:24px 20px}
+  .step-connector{display:none}
+  nav{padding:0 18px}
+  .nav-phone{display:none}
+  .trust-div{display:none}
+}
+@media(max-width:640px){
+  .section,.sample-section{padding:52px 18px}
+  nav{height:58px}
+  .hero{padding:60px 18px 52px}
+  h1{font-size:32px}
+  .fg,.result-actions{grid-template-columns:1fr}
+  .plan-select{grid-template-columns:1fr}
+  .trade-grid{grid-template-columns:repeat(3,1fr)}
+  .phone-banner-inner{flex-direction:column;gap:12px;text-align:center}
+  .hero-actions{flex-direction:column;align-items:center}
+  .trust-inner{gap:16px}
+}
+@media print{
+  nav,.phone-banner,footer,.share-row,.result-actions,.hero,.trust-bar,.section-white,.section-cream2,.sample-section{display:none}
+  .results.show{display:block}
+  body{background:white}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-mark">F</div>
+    <div class="logo-name">Fair<span>Bid</span></div>
+  </a>
+  <div class="nav-right">
+    <a href="tel:+19362650859" class="nav-phone">📞 1-936-265-0859</a>
+    <button class="nav-cta" onclick="scrollToForm()">Get My Report →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span></span> AI-Powered · All Trades · Works Anywhere</div>
+    <h1>Get a <em>fair shake</em> on<br>every contractor quote</h1>
+    <p class="hero-sub">Before you sign anything, let our AI check if your contractor's price is reasonable. We flag overcharges, missing warranties, and risky payment terms — in plain English. From <strong>$79</strong>.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="scrollToForm()">🔍 Check My Quote Now</button>
+      <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+    </div>
+    <div class="hero-phone">
+      <a href="tel:+19362650859">📞 Call 1-936-265-0859</a>
+      <span style="color:rgba(255,255,255,.3)">·</span>
+      <a href="sms:+19362650859">💬 Text us anytime</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Secured by Stripe
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">⚡ Report in under 60 seconds</div>
+    <div class="trust-div"></div>
+    <div class="trust-item">🌍 Works in 17 countries</div>
+    <div class="trust-div"></div>
+    <div class="trust-item">🏠 All construction trades</div>
+    <div class="trust-div"></div>
+    <div class="trust-item">📞 Real humans available: 1-936-265-0859</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section section-white" id="how">
+  <div class="section-inner">
+    <div class="eyebrow">How it works</div>
+    <h2>Three steps to know if you're being treated fairly</h2>
+    <p class="sec-lead">No construction knowledge needed. Just paste or upload what your contractor sent you.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Paste or upload your quote</h3>
+        <p>Copy the text from your contractor's estimate, or upload the PDF. Takes 30 seconds.</p>
+        <div class="step-connector">→</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>AI checks it against real benchmarks</h3>
+        <p>Our AI compares prices, checks for red flags, and reviews payment terms — for your specific trade and region.</p>
+        <div class="step-connector">→</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Get a clear report in plain English</h3>
+        <p>No jargon. Just a fairness score, what to watch out for, and the exact questions to ask your contractor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE REPORT -->
+<section class="sample-section">
+  <div class="section-inner" style="max-width:780px">
+    <div class="eyebrow">Sample report</div>
+    <h2>Here's what you'll get</h2>
+    <p class="sec-lead">Every finding uses plain English. Hover the underlined terms to see what they mean.</p>
+    <div class="sample-preview">
+      <div class="sample-header">
+        <div class="sample-title">Your FairBid Report — Roofing</div>
+        <div class="sample-badge">✅ PAID · QUICK CHECK</div>
+      </div>
+      <div class="sample-score-row">
+        <div class="sample-score">64</div>
+        <div class="sample-bar-wrap">
+          <div class="sample-verdict">⚠️ SOME CONCERNS</div>
+          <div class="sample-bar"><div class="sample-fill"></div></div>
+        </div>
+      </div>
+      <div class="sample-headline">This roofing quote is in the right ballpark, but a few things need clarification before you sign.</div>
+      <p class="sample-para">
+        The total price of $14,200 for a 2,400 sq ft roof replacement is within the typical range for your area. However, the quote asks for a 
+        <span class="tip"><span class="tip-word">50% deposit upfront</span><span class="tip-box">A deposit is money you pay before any work starts. 50% upfront is considered a red flag — reputable contractors usually ask for 10-25% to start, with the rest paid as work progresses.</span></span> 
+        — which is higher than the industry standard. The 
+        <span class="tip"><span class="tip-word">scope of work</span><span class="tip-box">The scope of work is the detailed list of everything the contractor will do: what materials they'll use, how much of it, and exactly what labor is included. Vague scope descriptions make it easy for costs to creep up later.</span></span> 
+        also doesn't specify the shingle brand or 
+        <span class="tip"><span class="tip-word">underlayment type</span><span class="tip-box">Underlayment is the protective layer installed under your shingles. There are different grades — synthetic underlayment lasts longer and performs better than felt paper. Your quote should specify which type is included.</span></span>.
+      </p>
+      <div class="sample-find">
+        <div class="sample-find-icon">⚠️</div>
+        <div class="sample-find-body">
+          <div class="ftitle">Large upfront deposit requested</div>
+          <div class="fdesc">50% deposit ($7,100) before work starts is above the standard 10-25% range. Ask for a milestone payment schedule instead.</div>
+        </div>
+      </div>
+      <div class="sample-find">
+        <div class="sample-find-icon">🚨</div>
+        <div class="sample-find-body">
+          <div class="ftitle">Materials not specified</div>
+          <div class="fdesc">The quote says "architectural shingles" but doesn't name the brand or wind rating. This leaves room for lower-quality substitutions.</div>
+        </div>
+      </div>
+      <div class="sample-find" style="margin-top:0">
+        <div class="sample-find-icon">✅</div>
+        <div class="sample-find-body">
+          <div class="ftitle">Price is within fair range</div>
+          <div class="fdesc">$14,200 for this project size is reasonable. Fair range for your area: $12,800–$16,400.</div>
+        </div>
+      </div>
+      <div style="margin-top:16px;font-weight:700;font-size:13px;color:var(--navy);margin-bottom:8px">💬 Questions to ask your contractor:</div>
+      <div class="sample-q"><span class="sample-q-num">Q1</span> Can we change the deposit to 20% upfront, 40% at midpoint, and 40% when the job is complete?</div>
+      <div class="sample-q"><span class="sample-q-num">Q2</span> What specific brand and model of shingle are you using, and what's the wind speed rating?</div>
+      <div class="sample-q"><span class="sample-q-num">Q3</span> Is the underlayment synthetic or felt paper?</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-white" id="pricing">
+  <div class="section-inner">
+    <div class="eyebrow">Pricing</div>
+    <h2>One fair price — no subscription</h2>
+    <p class="sec-lead">Pay once, get your report. The bigger your project, the deeper the analysis you need.</p>
+    <div class="price-grid">
+
+      <div class="pc">
+        <div class="pc-icon">🔍</div>
+        <div class="pc-name">QUICK CHECK</div>
+        <div class="pc-price"><sup>$</sup>79</div>
+        <div class="pc-cycle">One-time · Small repairs under $5,000</div>
+        <div class="pc-desc">Perfect for repair quotes. Get a fast, clear answer on whether the price and terms are reasonable.</div>
+        <ul class="pc-feats">
+          <li><span class="check">✓</span> Fairness score (0–100)</li>
+          <li><span class="check">✓</span> Top red flags identified</li>
+          <li><span class="check">✓</span> Fair price range for your area</li>
+          <li><span class="check">✓</span> 3 questions to ask your contractor</li>
+          <li><span class="check">✓</span> Printable report</li>
+        </ul>
+        <button class="pc-btn pc-btn-navy" onclick="pickPlanScroll('quick')">Get Quick Check →</button>
+      </div>
+
+      <div class="pc featured">
+        <div class="pc-badge">⚡ Most Popular</div>
+        <div class="pc-icon">📊</div>
+        <div class="pc-name">PRO COMPARE</div>
+        <div class="pc-price"><sup>$</sup>149</div>
+        <div class="pc-cycle">One-time · Projects $5k–$30k</div>
+        <div class="pc-desc">Best for mid-size jobs. Line-by-line breakdown plus negotiation talking points so you can push back confidently.</div>
+        <ul class="pc-feats">
+          <li><span class="check">✓</span> Everything in Quick Check</li>
+          <li><span class="check">✓</span> Line-by-line cost breakdown</li>
+          <li><span class="check">✓</span> Multi-quote comparison notes</li>
+          <li><span class="check">✓</span> 5 questions to ask</li>
+          <li><span class="check">✓</span> Negotiation talking points</li>
+          <li><span class="check">✓</span> Warranty & license check</li>
+        </ul>
+        <button class="pc-btn pc-btn-primary" onclick="pickPlanScroll('pro')">Get Pro Compare →</button>
+      </div>
+
+      <div class="pc premium">
+        <div class="pc-badge gold">🔥 Best for Big Builds</div>
+        <div class="pc-icon">🏗️</div>
+        <div class="pc-name">PREMIUM DEEP DIVE</div>
+        <div class="pc-price"><sup>$</sup>359</div>
+        <div class="pc-cycle">One-time · Projects $30k and up</div>
+        <div class="pc-desc">The complete package for major remodels, additions, and new builds. Includes a specific counter-offer target.</div>
+        <ul class="pc-feats">
+          <li><span class="check">✓</span> Everything in Pro Compare</li>
+          <li><span class="check">✓</span> Full contract risk audit</li>
+          <li><span class="check">✓</span> AI counter-offer with target price</li>
+          <li><span class="check">✓</span> Custom negotiation scripts</li>
+          <li><span class="check">✓</span> Contractor background check guidance</li>
+          <li><span class="check">✓</span> Suggested payment milestone schedule</li>
+        </ul>
+        <button class="pc-btn pc-btn-gold" onclick="pickPlanScroll('premium')">Get Deep Dive →</button>
+      </div>
+
+    </div>
+    <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--muted)">Questions? Call or text us anytime: <a href="tel:+19362650859" style="color:var(--terra);font-weight:600">1-936-265-0859</a></p>
+  </div>
+</section>
+
+<!-- PHONE BANNER -->
+<div class="phone-banner">
+  <div class="phone-banner-inner">
+    <p>📞 Not sure which plan? <strong>Call or text us — we'll help.</strong></p>
+    <a href="tel:+19362650859" class="phone-link ph-call">Call 1-936-265-0859</a>
+    <a href="sms:+19362650859" class="phone-link ph-text">💬 Text Us</a>
+  </div>
+</div>
+
+<!-- FORM -->
+<section class="section section-cream" id="form-section">
+  <div class="form-wrap">
+    <div class="eyebrow" style="text-align:center">Get your report</div>
+    <h2 style="margin-bottom:8px">Upload your contractor quote</h2>
+    <p class="sec-lead" style="margin-bottom:36px">Any trade. Any country. Takes about 2 minutes to fill out.</p>
+
+    <div class="progress-bar" id="progressBar">
+      <div class="prog-step">
+        <div class="prog-circle active" id="pc1">1</div>
+        <div class="prog-label active" id="pl1">YOUR INFO</div>
+      </div>
+      <div class="prog-line" id="pline1"></div>
+      <div class="prog-step">
+        <div class="prog-circle" id="pc2">2</div>
+        <div class="prog-label" id="pl2">YOUR QUOTE</div>
+      </div>
+      <div class="prog-line" id="pline2"></div>
+      <div class="prog-step">
+        <div class="prog-circle" id="pc3">3</div>
+        <div class="prog-label" id="pl3">CHECKOUT</div>
+      </div>
+      <div class="prog-line" id="pline3"></div>
+      <div class="prog-step">
+        <div class="prog-circle" id="pc4">4</div>
+        <div class="prog-label" id="pl4">YOUR REPORT</div>
+      </div>
+    </div>
+
+    <div id="formPanel">
+
+      <!-- Step 1: Info -->
+      <div class="card">
+        <div class="card-title"><span class="card-icon">👤</span> A bit about you</div>
+        <div class="fg">
+          <div class="fgrp">
+            <label>Your first name</label>
+            <input type="text" id="firstName" placeholder="Linda">
+          </div>
+          <div class="fgrp">
+            <label>Your email (report sent here)</label>
+            <input type="email" id="email" placeholder="linda@email.com">
+          </div>
+          <div class="fgrp">
+            <label>Country</label>
+            <select id="country">
+              <option value="US">🇺🇸 United States</option>
+              <option value="CA">🇨🇦 Canada</option>
+              <option value="GB">🇬🇧 United Kingdom</option>
+              <option value="AU">🇦🇺 Australia</option>
+              <option value="NZ">🇳🇿 New Zealand</option>
+              <option value="DE">🇩🇪 Germany</option>
+              <option value="FR">🇫🇷 France</option>
+              <option value="ES">🇪🇸 Spain</option>
+              <option value="IT">🇮🇹 Italy</option>
+              <option value="NL">🇳🇱 Netherlands</option>
+              <option value="MX">🇲🇽 Mexico</option>
+              <option value="BR">🇧🇷 Brazil</option>
+              <option value="ZA">🇿🇦 South Africa</option>
+              <option value="SG">🇸🇬 Singapore</option>
+              <option value="AE">🇦🇪 UAE</option>
+              <option value="IN">🇮🇳 India</option>
+              <option value="OTHER">🌍 Other</option>
+            </select>
+          </div>
+          <div class="fgrp">
+            <label>Currency</label>
+            <select id="currency">
+              <option value="USD">USD — US Dollar</option>
+              <option value="CAD">CAD — Canadian Dollar</option>
+              <option value="GBP">GBP — British Pound</option>
+              <option value="EUR">EUR — Euro</option>
+              <option value="AUD">AUD — Australian Dollar</option>
+              <option value="NZD">NZD — New Zealand Dollar</option>
+              <option value="ZAR">ZAR — South African Rand</option>
+              <option value="SGD">SGD — Singapore Dollar</option>
+              <option value="AED">AED — UAE Dirham</option>
+              <option value="INR">INR — Indian Rupee</option>
+              <option value="BRL">BRL — Brazilian Real</option>
+              <option value="MXN">MXN — Mexican Peso</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Quote -->
+      <div class="card">
+        <div class="card-title"><span class="card-icon">📋</span> Your contractor quote</div>
+        
+        <div class="fgrp" style="margin-bottom:16px">
+          <label>What type of work is this? (tap to select)</label>
+          <div class="trade-grid" id="tradeGrid">
+            <div class="trade-btn sel" data-trade="Roofing" onclick="pickTrade(this)"><span class="trade-icon">🏠</span>Roofing</div>
+            <div class="trade-btn" data-trade="HVAC" onclick="pickTrade(this)"><span class="trade-icon">❄️</span>HVAC</div>
+            <div class="trade-btn" data-trade="Plumbing" onclick="pickTrade(this)"><span class="trade-icon">🔧</span>Plumbing</div>
+            <div class="trade-btn" data-trade="Electrical" onclick="pickTrade(this)"><span class="trade-icon">⚡</span>Electrical</div>
+            <div class="trade-btn" data-trade="Kitchen Remodel" onclick="pickTrade(this)"><span class="trade-icon">🍳</span>Kitchen</div>
+            <div class="trade-btn" data-trade="Bathroom Remodel" onclick="pickTrade(this)"><span class="trade-icon">🛁</span>Bathroom</div>
+            <div class="trade-btn" data-trade="Addition / Extension" onclick="pickTrade(this)"><span class="trade-icon">🏗️</span>Addition</div>
+            <div class="trade-btn" data-trade="New Build" onclick="pickTrade(this)"><span class="trade-icon">🏡</span>New Build</div>
+            <div class="trade-btn" data-trade="Concrete / Masonry" onclick="pickTrade(this)"><span class="trade-icon">🧱</span>Concrete</div>
+            <div class="trade-btn" data-trade="Pool / Spa" onclick="pickTrade(this)"><span class="trade-icon">🏊</span>Pool</div>
+            <div class="trade-btn" data-trade="Landscaping" onclick="pickTrade(this)"><span class="trade-icon">🌳</span>Landscape</div>
+            <div class="trade-btn" data-trade="Painting" onclick="pickTrade(this)"><span class="trade-icon">🎨</span>Painting</div>
+            <div class="trade-btn" data-trade="Flooring" onclick="pickTrade(this)"><span class="trade-icon">🧰</span>Flooring</div>
+            <div class="trade-btn" data-trade="Windows / Doors" onclick="pickTrade(this)"><span class="trade-icon">🪟</span>Windows</div>
+            <div class="trade-btn" data-trade="Solar / Energy" onclick="pickTrade(this)"><span class="trade-icon">☀️</span>Solar</div>
+            <div class="trade-btn" data-trade="Storm Damage" onclick="pickTrade(this)"><span class="trade-icon">⛈️</span>Storm</div>
+            <div class="trade-btn" data-trade="Decks / Patios" onclick="pickTrade(this)"><span class="trade-icon">🪵</span>Decks</div>
+            <div class="trade-btn" data-trade="Other" onclick="pickTrade(this)"><span class="trade-icon">🔨</span>Other</div>
+          </div>
+        </div>
+
+        <div class="fg">
+          <div class="fgrp">
+            <label>Quote total amount</label>
+            <input type="number" id="quoteAmount" placeholder="14200" oninput="onAmountChange()">
+          </div>
+          <div class="fgrp">
+            <label>Contractor name (optional)</label>
+            <input type="text" id="contractor" placeholder="ABC Roofing Co">
+          </div>
+          <div class="fgrp full">
+            <label>Paste the quote text here</label>
+            <textarea id="quoteText" placeholder="Paste everything your contractor sent you — the more detail, the better the analysis. Prices, materials, labor breakdown, payment terms, anything."></textarea>
+          </div>
+          <div class="fgrp full">
+            <label>Or upload a file (PDF, photo, Word doc)</label>
+            <div class="upload-zone" id="uploadZone">
+              <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.txt" onchange="onFileSelect(this)">
+              <div style="font-size:28px;margin-bottom:8px">📎</div>
+              <div style="font-size:14px;font-weight:600;color:var(--ink)">Click to browse or drag a file here</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:4px">PDF · JPG · PNG · DOC · TXT</div>
+              <div class="file-picked" id="filePicked">✅ <span id="fileName"></span></div>
+            </div>
+          </div>
+          <div class="fgrp full">
+            <label>What's your main concern? (optional)</label>
+            <input type="text" id="concerns" placeholder='e.g. "Price seems too high" or "They want 60% upfront"'>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Plan -->
+      <div class="card">
+        <div class="card-title"><span class="card-icon">💳</span> Choose your review level</div>
+        <div class="ai-hint" id="aiHint"></div>
+        <div class="plan-select">
+          <div class="plan-opt" id="po-quick" onclick="pickPlan('quick')">
+            <div class="plan-price">$79</div>
+            <div class="plan-name">QUICK CHECK</div>
+            <div class="plan-tag">Small repairs</div>
+          </div>
+          <div class="plan-opt sel" id="po-pro" onclick="pickPlan('pro')">
+            <div class="badge badge-pop">⚡ Popular</div>
+            <div class="plan-price">$149</div>
+            <div class="plan-name">PRO COMPARE</div>
+            <div class="plan-tag">Mid projects</div>
+          </div>
+          <div class="plan-opt" id="po-premium" onclick="pickPlan('premium')">
+            <div class="badge badge-big">🔥 Big Builds</div>
+            <div class="plan-price">$359</div>
+            <div class="plan-name">DEEP DIVE</div>
+            <div class="plan-tag">Major projects</div>
+          </div>
+        </div>
+        <button class="pay-btn" onclick="handlePay()">🔒 Pay Securely & Get My Report</button>
+        <p class="pay-note">🔒 Payment handled by Stripe. Your card info never touches our servers. Report delivered instantly after payment.</p>
+      </div>
+
+    </div><!-- /formPanel -->
+
+    <!-- Analyzing -->
+    <div class="analyzing" id="analyzing">
+      <div class="spinner"></div>
+      <div class="an-title">Reviewing your quote…</div>
+      <div class="an-sub">This usually takes about 30–60 seconds.</div>
+      <div class="an-steps">
+        <div class="an-step" id="an1"><div class="an-dot"></div> Reading through your quote</div>
+        <div class="an-step" id="an2"><div class="an-dot"></div> Checking regional price benchmarks</div>
+        <div class="an-step" id="an3"><div class="an-dot"></div> Looking for red flags and missing terms</div>
+        <div class="an-step" id="an4"><div class="an-dot"></div> Calculating your fairness score</div>
+        <div class="an-step" id="an5"><div class="an-dot"></div> Writing up your questions to ask</div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+      <div id="verdictCard"></div>
+      <div class="card">
+        <div class="card-title"><span class="card-icon">🔍</span> What we found</div>
+        <div class="findings-grid" id="findingsGrid"></div>
+      </div>
+      <div class="questions-card">
+        <div class="q-title"><span>💬</span> Questions to ask your contractor</div>
+        <ul class="q-list" id="questionList"></ul>
+        <div class="rec-box" id="recBox"></div>
+        <div class="neg-box" id="negBox" style="display:none"></div>
+      </div>
+      <div id="extraBoxes"></div>
+      <div class="result-actions">
+        <button class="ra-btn ra-primary" onclick="window.print()">🖨️ Print This Report</button>
+        <button class="ra-btn ra-ghost" onclick="resetForm()">🔄 Check Another Quote</button>
+      </div>
+      <div class="share-row">
+        <div class="share-label">TELL A FRIEND ABOUT FAIRBID</div>
+        <div class="share-btns">
+          <button class="sh-btn sh-fb" onclick="shareFB()">👍 Facebook</button>
+          <button class="sh-btn sh-tw" onclick="shareTW()">𝕏 Twitter</button>
+          <button class="sh-btn sh-wa" onclick="shareWA()">💬 WhatsApp</button>
+          <button class="sh-btn sh-nd" onclick="shareND()">🏘️ Nextdoor</button>
+          <button class="sh-btn sh-cp" onclick="copyLink()">🔗 Copy Link</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-white">
+  <div class="section-inner">
+    <div class="eyebrow">What people say</div>
+    <h2>Real homeowners, real results</h2>
+    <p class="sec-lead">FairBid has helped homeowners save thousands before signing contractor agreements.</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"I almost paid $22,000 for a kitchen remodel. FairBid showed me the quote was $4,800 over fair market and gave me the exact script to negotiate. Contractor came down $3,500 on the spot."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Margaret T.</div>
+            <div class="testi-detail">Dallas, TX · Kitchen Remodel</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"The roofing contractor wanted 60% upfront. FairBid flagged that immediately and explained why it was risky. I asked for milestone payments and the contractor agreed without any argument."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Robert S.</div>
+            <div class="testi-detail">Phoenix, AZ · Roof Replacement</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"I'm not a contractor, I don't know what things should cost. FairBid made it easy to understand what I was looking at and gave me confidence I wasn't getting taken advantage of."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P</div>
+          <div>
+            <div class="testi-name">Patricia W.</div>
+            <div class="testi-detail">Atlanta, GA · Bathroom Addition</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="section section-cream2" style="text-align:center">
+  <div class="section-inner" style="max-width:600px">
+    <div class="eyebrow">Don't sign without checking</div>
+    <h2>Ready to know if your quote is fair?</h2>
+    <p class="sec-lead" style="margin-bottom:32px">Takes 2 minutes. Could save you thousands. Starts at $79.</p>
+    <button class="btn-primary" style="margin:0 auto" onclick="scrollToForm()">🔍 Check My Quote Now</button>
+    <p style="margin-top:16px;font-size:14px;color:var(--muted)">Or call us: <a href="tel:+19362650859" style="color:var(--terra);font-weight:600">1-936-265-0859</a></p>
+  </div>
+</section>
+
+<!-- PHONE BANNER -->
+<div class="phone-banner">
+  <div class="phone-banner-inner">
+    <p>📞 Need help? We're real humans. <strong>Call or text anytime.</strong></p>
+    <a href="tel:+19362650859" class="phone-link ph-call">📞 1-936-265-0859</a>
+    <a href="sms:+19362650859" class="phone-link ph-text">💬 Text Us</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">Fair<span>Bid</span></div>
+  <div class="foot-tagline">AI-powered contractor quote review · All trades · Global</div>
+  <div class="foot-links">
+    <a href="tel:+19362650859" class="foot-link fl-call">📞 1-936-265-0859</a>
+    <a href="sms:+19362650859" class="foot-link fl-text">💬 Text Us</a>
+  </div>
+  <div class="foot-fine">
+    © 2025 FairBid · fairbid.vercel.app · Powered by AI · Secured by Stripe<br>
+    FairBid provides AI-generated second opinions only. Always verify with a licensed professional.<br>
+    Available in 17 countries · 12 currencies · All major construction trades
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── STRIPE PAYMENT LINKS ───
+const STRIPE = {
+  quick:   'https://buy.stripe.com/7sYaEY5S7h026nd0W4cMM07',
+  pro:     'https://buy.stripe.com/28EaEY1BR2583b1dIQcMM08',
+  premium: 'https://buy.stripe.com/3cI28sbcr9xA8vl5ckcMM09'
+};
+
+let activeTrade = 'Roofing';
+let activePlan  = 'pro';
+
+function scrollToForm() {
+  document.getElementById('form-section').scrollIntoView({behavior:'smooth'});
+}
+
+function pickTrade(el) {
+  document.querySelectorAll('.trade-btn').forEach(b => b.classList.remove('sel'));
+  el.classList.add('sel');
+  activeTrade = el.dataset.trade;
+  onAmountChange();
+}
+
+function pickPlan(p) {
+  activePlan = p;
+  ['quick','pro','premium'].forEach(k => {
+    const el = document.getElementById('po-'+k);
+    el.classList.remove('sel','sel-gold');
+  });
+  if (p === 'premium') document.getElementById('po-premium').classList.add('sel-gold');
+  else document.getElementById('po-'+p).classList.add('sel');
+}
+
+function pickPlanScroll(p) {
+  pickPlan(p);
+  scrollToForm();
+}
+
+function onAmountChange() {
+  const amt = parseFloat(document.getElementById('quoteAmount').value) || 0;
+  const cur = document.getElementById('currency').value;
+  const hint = document.getElementById('aiHint');
+  if (amt >= 30000) {
+    hint.innerHTML = `<strong>💡 Recommendation:</strong> For a project this size (${cur} ${amt.toLocaleString()}), the Premium Deep Dive ($359) gives you a counter-offer target and negotiation scripts — tools that typically save far more than the cost of the report.`;
+    hint.classList.add('show');
+    pickPlan('premium');
+  } else if (amt >= 5000) {
+    hint.innerHTML = `<strong>💡 Recommendation:</strong> Pro Compare ($149) is the right fit for a ${cur} ${amt.toLocaleString()} project — you'll get the line-by-line breakdown and negotiation points you need.`;
+    hint.classList.add('show');
+    pickPlan('pro');
+  } else if (amt > 0) {
+    hint.innerHTML = `<strong>💡 Recommendation:</strong> Quick Check ($79) covers small jobs like this one (${cur} ${amt.toLocaleString()}) perfectly.`;
+    hint.classList.add('show');
+    pickPlan('quick');
+  } else {
+    hint.classList.remove('show');
+  }
+}
+
+function onFileSelect(inp) {
+  if (inp.files && inp.files[0]) {
+    document.getElementById('fileName').textContent = inp.files[0].name;
+    document.getElementById('filePicked').classList.add('show');
+  }
+}
+
+const uz = document.getElementById('uploadZone');
+uz.addEventListener('dragover', e => { e.preventDefault(); uz.classList.add('over'); });
+uz.addEventListener('dragleave', () => uz.classList.remove('over'));
+uz.addEventListener('drop', e => {
+  e.preventDefault(); uz.classList.remove('over');
+  const f = e.dataTransfer.files[0];
+  if (f) { document.getElementById('fileName').textContent = f.name; document.getElementById('filePicked').classList.add('show'); }
+});
+
+function setStep(n) {
+  [1,2,3,4].forEach(i => {
+    const c = document.getElementById('pc'+i);
+    const l = document.getElementById('pl'+i);
+    c.classList.remove('active','done');
+    l.classList.remove('active');
+    if (i < n) { c.classList.add('done'); c.textContent = '✓'; }
+    else if (i === n) { c.classList.add('active'); c.textContent = i; l.classList.add('active'); }
+    else c.textContent = i;
+    if (i < 4) {
+      const line = document.getElementById('pline'+i);
+      if (line) line.classList.toggle('done', i < n);
+    }
+  });
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function handlePay() {
+  const email = document.getElementById('email').value.trim();
+  const qt = document.getElementById('quoteText').value.trim();
+  const hasFile = document.getElementById('filePicked').classList.contains('show');
+  
+  if (!email) { 
+    alert('Please enter your email address in Step 1 so we know where to send your report.'); 
+    document.getElementById('email').focus();
+    return; 
+  }
+  if (!qt && !hasFile) { 
+    alert('Please paste your quote or upload a file in Step 2.'); 
+    document.getElementById('quoteText').focus();
+    return; 
+  }
+
+  sessionStorage.setItem('fairbid_data', JSON.stringify({
+    firstName: document.getElementById('firstName').value.trim() || 'Homeowner',
+    email,
+    country: document.getElementById('country').value,
+    currency: document.getElementById('currency').value,
+    trade: activeTrade,
+    contractor: document.getElementById('contractor').value.trim() || 'Unknown Contractor',
+    amount: document.getElementById('quoteAmount').value.trim(),
+    quote: qt,
+    concerns: document.getElementById('concerns').value.trim(),
+    plan: activePlan
+  }));
+
+  setStep(2);
+  const link = STRIPE[activePlan];
+  window.location.href = link + '?prefilled_email=' + encodeURIComponent(email) + '&client_reference_id=' + Date.now();
+}
+
+// After payment redirect
+window.addEventListener('load', () => {
+  const p = new URLSearchParams(location.search);
+  if (p.get('paid') === '1' || p.get('success') === 'true') {
+    const d = sessionStorage.getItem('fairbid_data');
+    if (d) {
+      document.getElementById('formPanel').style.display = 'none';
+      document.getElementById('progressBar').style.display = 'none';
+      startAnalysis();
+    }
+  }
+});
+
+function animateSteps(cb) {
+  const ids = ['an1','an2','an3','an4','an5'];
+  ids.forEach(id => { const el = document.getElementById(id); el.classList.remove('active','done'); });
+  let i = 0;
+  function next() {
+    if (i > 0) document.getElementById(ids[i-1]).classList.replace('active','done');
+    if (i < ids.length) { document.getElementById(ids[i]).classList.add('active'); i++; setTimeout(next, 1400); }
+    else setTimeout(cb, 400);
+  }
+  next();
+}
+
+async function startAnalysis() {
+  const raw = sessionStorage.getItem('fairbid_data');
+  const d = raw ? JSON.parse(raw) : {
+    firstName: document.getElementById('firstName').value.trim() || 'Homeowner',
+    email: document.getElementById('email').value.trim(),
+    country: document.getElementById('country').value,
+    currency: document.getElementById('currency').value,
+    trade: activeTrade,
+    contractor: document.getElementById('contractor').value || 'Unknown',
+    amount: document.getElementById('quoteAmount').value,
+    quote: document.getElementById('quoteText').value,
+    concerns: document.getElementById('concerns').value,
+    plan: activePlan
+  };
+
+  document.getElementById('formPanel').style.display = 'none';
+  document.getElementById('analyzing').classList.add('show');
+  document.getElementById('results').classList.remove('show');
+  setStep(3);
+  document.getElementById('form-section').scrollIntoView({behavior:'smooth'});
+
+  const tierLabel = {quick:'QUICK CHECK',pro:'PRO COMPARE',premium:'PREMIUM DEEP DIVE'}[d.plan];
+  const isPro = d.plan === 'pro' || d.plan === 'premium';
+  const isPremium = d.plan === 'premium';
+
+  const prompt = `You are FairBid, an expert AI construction quote reviewer. Write everything in plain, friendly English that a homeowner with no construction background can easily understand. Avoid technical jargon. If you must use a technical term, briefly explain it in parentheses. Be direct and helpful.
+
+CUSTOMER: ${d.firstName} | COUNTRY: ${d.country} | CURRENCY: ${d.currency} | TRADE: ${d.trade} | CONTRACTOR: ${d.contractor} | AMOUNT: ${d.amount ? d.currency+' '+Number(d.amount).toLocaleString() : 'Not given'} | CONCERN: ${d.concerns || 'None stated'} | TIER: ${tierLabel}
+QUOTE TEXT: ${d.quote || '[File uploaded — analyze based on trade and amount]'}
+
+${isPremium ? 'PREMIUM: Include line-by-line analysis, counter-offer with specific dollar target, custom negotiation script, and payment milestone schedule.' : isPro ? 'PRO: Include line-by-line notes and negotiation talking points.' : 'QUICK: Focus on top 3–5 red flags and fair price range.'}
+
+Respond ONLY with valid JSON:
+{
+  "verdict": "FAIR" | "WARNING" | "DANGER",
+  "score": <0-100 number>,
+  "headline": "One sentence summary in plain English",
+  "summary": "2-3 sentences explaining what we found, in plain English a homeowner can understand",
+  "estimatedFairRange": "${d.currency || 'USD'} X–Y",
+  "findings": [
+    {"type": "RED_FLAG" | "WARNING" | "GOOD" | "INFO", "title": "Short plain English title", "detail": "1-2 sentence plain English explanation of what this means for the homeowner and why it matters", "category": "PRICING | PAYMENT_TERMS | SCOPE | WARRANTY | LICENSING | MATERIALS"}
+  ],
+  "questions": ["Question 1 — word it exactly as the homeowner should say it to the contractor", "Question 2"${isPro ? ', "Q3", "Q4", "Q5"' : ', "Q3"'}],
+  "recommendation": "1-2 sentence plain English recommendation on what to do next"${isPro ? ', "negotiation": ["Script 1 — exact words to say", "Script 2", "Script 3"]' : ''}${isPremium ? ', "counterOffer": "Specific target price with reasoning", "milestones": "Suggested payment milestone schedule"' : ''}
+}
+
+${isPro ? 'Include at least 5 findings and exactly 5 questions.' : 'Include at least 3 findings and exactly 3 questions.'} Make everything feel friendly and helpful, not scary.`;
+
+  const apiCall = fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 1800,
+      messages: [{role: 'user', content: prompt}]
+    })
+  }).then(r => r.json())
+    .then(data => JSON.parse(data.content.map(b => b.text || '').join('').replace(/```json|```/g,'').trim()))
+    .catch(() => buildFallback(d));
+
+  animateSteps(async () => {
+    const result = await apiCall;
+    showResults(result, d);
+  });
+}
+
+function buildFallback(d) {
+  const amt = parseInt(d.amount) || 10000;
+  const c = d.currency || 'USD';
+  return {
+    verdict: 'WARNING',
+    score: 62,
+    headline: `This ${d.trade} quote has a few things worth clarifying before you sign.`,
+    summary: `The price of ${c} ${amt.toLocaleString()} is in a reasonable range, but there are some terms in this quote that deserve a second look. Here's what we found and what to ask about.`,
+    estimatedFairRange: `${c} ${Math.round(amt*.85).toLocaleString()}–${Math.round(amt*1.15).toLocaleString()}`,
+    findings: [
+      {type:'WARNING',title:'Payment terms need clarification',detail:'Make sure you understand exactly when payments are due and what triggers each one. Large upfront payments (over 25–30%) are a red flag in most trades.',category:'PAYMENT_TERMS'},
+      {type:'RED_FLAG',title:'Materials may not be fully specified',detail:"The quote should list the exact brand, model, and grade of all major materials. Vague descriptions like 'standard materials' leave room for lower-quality substitutions.",category:'MATERIALS'},
+      {type:'WARNING',title:'Warranty terms not clear',detail:"Ask for the warranty in writing. You want to know: what's covered, for how long, and what happens if problems come up after the contractor is paid and gone.",category:'WARRANTY'},
+      {type:'INFO',title:'Get at least one more quote',detail:'Even if this price seems fair, getting a second opinion from another contractor helps you understand what a competitive price looks like in your area.',category:'PRICING'},
+      {type:'GOOD',title:'Price is within the expected range',detail:`For ${d.trade} work in your area, this price falls within what we typically see. It's not an obvious red flag on price alone.`,category:'PRICING'}
+    ],
+    questions: [
+      `"Can we set up milestone payments instead — like 20% to start, 40% at the halfway point, and 40% when everything is done to my satisfaction?"`,
+      `"Can you give me a written list of the exact materials you'll use, including the brand names?"`,
+      `"What's your warranty, and can I get that in writing before I sign?"`,
+      `"Are you licensed and insured for ${d.trade} work in ${d.country}? Can I see the certificates?"`,
+      `"How long will the project take, and what happens if it runs over schedule?"`
+    ],
+    recommendation: `Before signing, ask for the warranty in writing and request milestone payments instead of a large deposit. These are reasonable requests that any reputable contractor will agree to.`,
+    negotiation: d.plan !== 'quick' ? [
+      `"I've done some research and I'd like to discuss the payment terms. Can we do 20% upfront, 40% at the midpoint, and 40% when the work is complete?"`,
+      `"I have another bid coming in. If you can match [target price], I'm ready to move forward with you today."`,
+      `"I noticed the materials aren't specified. Can you give me a written materials list so I can compare apples to apples?"`
+    ] : undefined
+  };
+}
+
+function showResults(r, d) {
+  document.getElementById('analyzing').classList.remove('show');
+  document.getElementById('results').classList.add('show');
+  setStep(4);
+  if (d) sessionStorage.removeItem('fairbid_data');
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+
+  const v = r.verdict;
+  const vc = v==='FAIR' ? 'verdict-fair' : v==='WARNING' ? 'verdict-warn' : 'verdict-danger';
+  const bc = v==='FAIR' ? 'v-badge-fair' : v==='WARNING' ? 'v-badge-warn' : 'v-badge-danger';
+  const sc = v==='FAIR' ? 'score-fair' : v==='WARNING' ? 'score-warn' : 'score-danger';
+  const fc = v==='FAIR' ? 'fill-fair' : v==='WARNING' ? 'fill-warn' : 'fill-danger';
+  const vi = v==='FAIR' ? '✅ FAIR PRICE' : v==='WARNING' ? '⚠️ REVIEW CAREFULLY' : '🚨 SIGNIFICANT CONCERNS';
+  const planLabel = {quick:'Quick Check · $79', pro:'Pro Compare · $149', premium:'Premium Deep Dive · $359'}[d.plan];
+
+  document.getElementById('verdictCard').innerHTML = `
+    <div class="verdict-card ${vc}" style="margin-bottom:16px">
+      <div style="font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.5px;margin-bottom:10px">✅ PAID · ${d.trade.toUpperCase()} · ${planLabel.toUpperCase()}</div>
+      <div class="v-badge ${bc}">${vi}</div>
+      <div class="score-row">
+        <div class="score-num ${sc}">${r.score}</div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label">FAIRNESS SCORE OUT OF 100</div>
+          <div class="score-bar"><div class="score-fill ${fc}" id="scoreFill" style="width:0%"></div></div>
+        </div>
+      </div>
+      <div class="v-headline">${r.headline}</div>
+      <div class="v-summary">${r.summary}</div>
+      ${r.estimatedFairRange ? `<div class="fair-range">📊 Fair price range for your area: <strong>${r.estimatedFairRange}</strong></div>` : ''}
+    </div>`;
+  setTimeout(() => { const f = document.getElementById('scoreFill'); if(f) f.style.width = r.score + '%'; }, 100);
+
+  const typeMap = {
+    RED_FLAG: {icon:'🚨', cls:'fi-red', label:'RED FLAG'},
+    WARNING:  {icon:'⚠️', cls:'fi-warn', label:'WATCH OUT'},
+    GOOD:     {icon:'✅', cls:'fi-good', label:'POSITIVE'},
+    INFO:     {icon:'ℹ️', cls:'fi-info', label:'NOTE'}
+  };
+  document.getElementById('findingsGrid').innerHTML = (r.findings||[]).map(f => {
+    const t = typeMap[f.type] || typeMap.INFO;
+    return `<div class="finding">
+      <div class="finding-icon ${t.cls}">${t.icon}</div>
+      <div class="finding-body">
+        <div class="finding-title">${f.title}</div>
+        <div class="finding-desc">${f.detail}</div>
+        <span class="finding-tag">${t.label}${f.category ? ' · '+f.category.replace(/_/g,' ') : ''}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('questionList').innerHTML = (r.questions||[]).map((q,i) =>
+    `<li class="q-item"><span class="q-num">Q${i+1}</span><span>${q}</span></li>`
+  ).join('');
+
+  document.getElementById('recBox').innerHTML = r.recommendation
+    ? `<strong>💡 Our recommendation:</strong> ${r.recommendation}` : '';
+
+  const nb = document.getElementById('negBox');
+  if (r.negotiation && r.negotiation.length) {
+    nb.style.display = 'block';
+    nb.innerHTML = `<strong>💰 Negotiation scripts — use these exact words:</strong><br><br>` +
+      r.negotiation.map((s,i) => `<div style="margin-bottom:10px;padding:10px 12px;background:rgba(61,122,95,.05);border-radius:8px"><strong style="font-size:11px;color:var(--sage)">SCRIPT ${i+1}:</strong><br>${s}</div>`).join('');
+  } else nb.style.display = 'none';
+
+  let extras = '';
+  if (r.counterOffer) extras += `<div class="extra-box counter-box"><strong>🎯 AI counter-offer target:</strong> ${r.counterOffer}</div>`;
+  if (r.milestones) extras += `<div class="extra-box milestone-box"><strong>📅 Suggested payment schedule:</strong> ${r.milestones}</div>`;
+  document.getElementById('extraBoxes').innerHTML = extras;
+}
+
+function resetForm() {
+  document.getElementById('formPanel').style.display = 'block';
+  document.getElementById('progressBar').style.display = 'flex';
+  document.getElementById('analyzing').classList.remove('show');
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('quoteText').value = '';
+  document.getElementById('concerns').value = '';
+  document.getElementById('quoteAmount').value = '';
+  document.getElementById('filePicked').classList.remove('show');
+  document.getElementById('aiHint').classList.remove('show');
+  setStep(1);
+  scrollToForm();
+}
+
+const pageUrl = location.href.split('?')[0];
+const shareMsg = 'I used FairBid to check my contractor quote — it caught things I never would have noticed. From $79. ';
+function shareFB(){window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(shareMsg)}`,'_blank')}
+function shareTW(){window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMsg+pageUrl)}`,'_blank')}
+function shareWA(){window.open(`https://wa.me/?text=${encodeURIComponent(shareMsg+pageUrl)}`,'_blank')}
+function shareND(){window.open(`https://nextdoor.com/sharekit/recommendation/?body=${encodeURIComponent(shareMsg+pageUrl)}`,'_blank')}
+function copyLink(){navigator.clipboard.writeText(pageUrl).then(()=>toast('✅ Link copied!')).catch(()=>toast('Copy: '+pageUrl))}
+
+// Dev mode — allow testing without payment
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && e.key === 't') {
+    const qt = document.getElementById('quoteText').value.trim() || 'Roofing replacement 2400 sq ft. Materials: architectural shingles. Labor: $4,200. Materials: $8,900. Tear off: $800. Disposal: $300. Total: $14,200. Requires 50% deposit, remainder on completion. No specific brand mentioned.';
+    document.getElementById('quoteText').value = qt;
+    document.getElementById('email').value = 'test@test.com';
+    document.getElementById('quoteAmount').value = '14200';
+    document.getElementById('formPanel').style.display = 'none';
+    document.getElementById('progressBar').style.display = 'none';
+    sessionStorage.setItem('fairbid_data', JSON.stringify({
+      firstName:'Test', email:'test@test.com', country:'US', currency:'USD',
+      trade:'Roofing', contractor:'ABC Roofing', amount:'14200', quote:qt,
+      concerns:'Deposit seems high', plan:'pro'
+    }));
+    startAnalysis();
+  }
+});
+</script>
+</body>
+</html>
